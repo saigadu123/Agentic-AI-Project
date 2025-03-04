@@ -9,3 +9,6 @@ class LoadStreamlitUI:
         self.config = config()
         self.user_controls = {}
 
+    def load_streamlit_ui(self):
+        st.set_page_config()
+
