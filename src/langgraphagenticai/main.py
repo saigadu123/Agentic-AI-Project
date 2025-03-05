@@ -2,6 +2,7 @@ import streamlit as st
 import json
 from src.langgraphagenticai.ui.streamlitui.loadui import LoadStreamlitUI
 from src.langgraphagenticai.LLMS.groqllm import GroqLLM
+from src.langgraphagenticai.graph.graph_builder import GraphBuilder
 
 def load_langgraph_agenticai_app():
     """
@@ -38,9 +39,19 @@ def load_langgraph_agenticai_app():
                 st.error("Error: Usecase not selected.")
                 return
             
+
+            # Graph Builder
+            graph_builder = GraphBuilder(model)
+            try:
+                graph = graph_builder.setup_graph(usecase=usecase)
+            except Exception as e:
+                raise ValueError(f"Error: Graph set up Failed - {e}")
+                return 
+            
         except Exception as e:
             raise ValueError(f"Error occured with exception : {e}")
         
-    # Graph Builder
-    
+ 
+
+
 
