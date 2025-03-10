@@ -65,8 +65,8 @@ class GraphBuilder:
         elif usecase == "Chatbot with Tool":
             self.chatbot_with_tools_build_graph()
 
-        graph = self.graph_builder.compile()
-        display(Image(graph.get_graph().draw_mermaid_png(output_file_path=f"src\langgraphagenticai\graph\graph_images\graph-{usecase}.png")))
-        return graph
+       
+       
+        return self.graph_builder.compile()
 
 
