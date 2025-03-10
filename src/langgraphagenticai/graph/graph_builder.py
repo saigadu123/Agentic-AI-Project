@@ -50,8 +50,8 @@ class GraphBuilder:
         self.graph_builder.add_node("tools",tool_node)
 
         # Define direct and conditional edges
-        self.graph_builder.add_edge("chatbot",tools_condition)
         self.graph_builder.add_edge(START,"chatbot")
+        self.graph_builder.add_edge("chatbot",tools_condition)
         self.graph_builder.add_edge("tools",END)
 
 
