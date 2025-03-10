@@ -37,7 +37,7 @@ class GraphBuilder:
         The chatbot node is set as the entry point.
         """
         tools = get_tools()
-        tool_node = create_tool_node(tools=tools)
+        tool_node = create_tool_node(tools)
 
         # Define LLM
         llm = self.llm

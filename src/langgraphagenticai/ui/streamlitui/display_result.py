@@ -23,7 +23,7 @@ class DisplayResultStreamlit:
                         with st.chat_message("assistant"):
                             st.write(value["messages"][-1].content)
         
-        elif usecase == "Basic Tool Chatbot":
+        elif usecase == "Chatbot with Tool":
              initial_state = {"messages":[user_message]}
              res = graph.invoke(initial_state)
              for message in res["messages"]:
