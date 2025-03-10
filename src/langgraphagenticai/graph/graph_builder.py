@@ -65,7 +65,7 @@ class GraphBuilder:
         elif usecase == "Chatbot with Tool":
             self.chatbot_with_tools_build_graph()
 
-       
+        
        
         return self.graph_builder.compile()
 
