@@ -6,6 +6,7 @@ from src.langgraphagenticai.state.state import State
 from src.langgraphagenticai.nodes.basic_chatbot_node import BasicChatbotNode
 from src.langgraphagenticai.tools.search_tool import get_tools,create_tool_node
 from src.langgraphagenticai.nodes.chatbot_with_tools_node import ChatbotWithToolNode
+from IPython.display import display,Image
 
 class GraphBuilder:
 
@@ -64,6 +65,8 @@ class GraphBuilder:
         elif usecase == "Chatbot with Tool":
             self.chatbot_with_tools_build_graph()
 
-        return self.graph_builder.compile()
+        graph = self.graph_builder.compile()
+        display(Image(graph.get_graph().draw_mermaid_png(output_file_path=f"src\langgraphagenticai\graph\graph_images\graph-{usecase}.png")))
+        return graph
 
 
